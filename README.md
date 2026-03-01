@@ -1,4 +1,4 @@
-StrategicSim
+# StrategicSim
 # Smart Strategy Simulator
 An AI-powered tool that simulates different strategies based on user scenarios.
 
@@ -16,6 +16,7 @@ The system generates strategic suggestions and displays the results interactivel
 
 # Technologies Used:
 - HTML
+- Type Script
 - CSS
 - JavaScript
 - Google AI API
