@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-100 text-gray-900 antialiased selection:bg-blue-500/30 transition-colors duration-300;
+  }
+  
+  html.dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-200 transition-all duration-300;
+  }
+  
+  html.dark .glass-card {
+    @apply bg-gray-900 border-gray-700 shadow-xl;
+  }
+  
+  .neon-border-cyan {
+    @apply border-blue-500/50 shadow-[0_4px_15px_rgba(59,130,246,0.1)];
+  }
+  
+  html.dark .neon-border-cyan {
+    @apply border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)];
+  }
+  
+  .neon-border-emerald {
+    @apply border-emerald-500/50 shadow-[0_4px_15px_rgba(16,185,129,0.1)];
+  }
+  
+  html.dark .neon-border-emerald {
+    @apply border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)];
+  }
+  
+  .neon-border-rose {
+    @apply border-rose-500/50 shadow-[0_4px_15px_rgba(244,63,94,0.1)];
+  }
+  
+  html.dark .neon-border-rose {
+    @apply border-rose-500/30 shadow-[0_0_20px_rgba(244,63,94,0.2)];
+  }
+
+  .neon-text-cyan {
+    @apply text-blue-600;
+  }
+  
+  html.dark .neon-text-cyan {
+    @apply text-blue-400 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)];
+  }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline {
+  background: linear-gradient(to bottom, transparent, rgba(34, 211, 238, 0.1), transparent);
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+}
